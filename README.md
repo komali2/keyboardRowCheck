@@ -1,4 +1,6 @@
-# unit21
+# ROW CHECKER
+
+A simple app to see if your input is all on one row for two standard keyboard layouts.
 
 ## Project setup
 ```
