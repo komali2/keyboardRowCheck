@@ -163,13 +163,16 @@ h3 small {
 }
 
 main section {
-  border: 1px solid black;
+  border: 1px solid;
+  border-color: black;
   padding: 10px;
   margin-bottom: 10px;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  transition-property: border-color;
+  transition-duration: 1s;
 }
 main section div {
    margin: 8px 0px;
@@ -182,10 +185,12 @@ main section input {
  }
 
  section.showValid.isValid {
-   border: 2px solid green;
+   border: 3px solid;
+   border-color: green;
  }
  section.showValid.isNotValid {
-   border: 2px solid red;
+   border: 3px solid;
+   border-color: red;
  }
 
 main small {
