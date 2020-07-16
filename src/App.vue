@@ -8,7 +8,13 @@
         </small>
       </h1>
     </header>
-    <section>
+    <section
+      :class="{
+        showValid: userInput.length,
+        isValid: isValid(userInput),
+        isNotValid: !isValid(userInput)
+      }"
+    >
       <input v-model="userInput" />
       <div v-if="isValid(userInput)">
         It's valid!
@@ -173,6 +179,13 @@ main section input {
  }
  main section select {
    margin: 8px 0px;
+ }
+
+ section.showValid.isValid {
+   border: 2px solid green;
+ }
+ section.showValid.isNotValid {
+   border: 2px solid red;
  }
 
 main small {
