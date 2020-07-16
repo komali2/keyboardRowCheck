@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Keyboard Challenge</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /*
+        Given a user input, display a message if the input can be typed using letters of only one row on a keyboard.
+
+        Extra credit: Include the option for a user to pick the type of keyboard they are using (ANSI, ISO, etc)!
+
+        Example: (Using QWERTY - US Layout https://en.wikipedia.org/wiki/QWERTY)
+            isValid(‘candy’)
+            isValid(‘doodle’)
+            isValid(‘pop’)             // True
+            isValid(‘shield’)
+            isValid(‘lag’)               // True
+            isValid(‘typewriter’)  // True
+      */
+    const ROWS = [[
+      'A',
+      'S',
+      'D',
+      'F',
+      'G',
+      'H',
+      'J',
+      'K',
+      'L',
+    ],
+                  [
+                    'Q',
+                    'W',
+                    'E',
+                    'R',
+                    'T',
+                    'Y',
+                    'U',
+                    'I',
+                    'O',
+                    'P',
+                  ],
+                  [
+                    'Z',
+                    'X',
+                    'C',
+                    'V',
+                    'N',
+                    'B',
+                    'N',
+                    'M',
+                  ],
+    ];
+
+
+
+
+    // 'candy'
+    // c is homerow? contine else break
+    function isValid(input) {
+      // Determine which row this string may be on
+      let keyRow = null
+      for (row in ROWS) {
+        if (row.inclues(input[0])) {
+          keyRow = row;
+        }
+      }
+
+      if (!keyRow) return false;
+
+      for (i = 0; i < input.length; i++) {
+        if (!row.includes(input[i].toUpperCase())) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    console.log(isValid('candy') === false);
+    console.log(isValid('doodle') === false);
+    console.log(isValid('pop') === true);             // True
+    console.log(isValid('shield') === false);
+    console.log(isValid('lag') === true);               // True
+    console.log(isValid('typewriter')=== true);  // True
+    </script>
+  </body>
+</html>
